@@ -10,4 +10,17 @@
 
 .container {
     padding: 0 15%;
+    width: 100%;
+}
+
+.container h1 {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.container img {
+    display: block;
+    margin: auto;
+    margin-bottom: 20px;
+    object-fit: cover;
 }

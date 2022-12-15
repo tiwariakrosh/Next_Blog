@@ -16,10 +16,16 @@
     align-items: center;
     gap: 40px;
     margin-top: 20px;
+    flex-wrap: wrap;
 }
 
 .blogItem {
-    width: 33%;
+    width: 45%;
+}
+
+.main h2 {
+    margin: 40px 0;
+    font-size: 2rem;
 }
 
 .blogs h3 {

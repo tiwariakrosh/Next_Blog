@@ -2,6 +2,10 @@
   padding: 0 2rem;
 }
 
+.container h3 {
+  margin-top: 20px;
+}
+
 .main {
   min-height: 100vh;
   padding: 1rem 0;
@@ -149,4 +153,30 @@
 
 .mainNav li:hover {
   color: orangered;
+}
+
+.heroSection {
+  position: relative;
+  background: url(../public/assets/dark_bg.jpg) no-repeat center;
+  background-size: cover;
+  height: calc(300px - 70px);
+  width: 100%;
+}
+
+.heroSection::after {
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: #ffffffe8;
+  top: 0;
+  right: 0;
+}
+
+.heroText {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  z-index: 2;
+  transform: translate(-50%);
 }

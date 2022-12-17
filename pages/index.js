@@ -23,6 +23,9 @@ export default function Home() {
               </p>
             </div>
           </div>
+          <hr />
+          {/* <Image src="/assets/hd_bg.jpg" alt="" width={400} height={220} /> */}
+          <img src="/assets/hd_bg.jpg" alt="Hunting Coder" width={400} height={220} />
           <h2>Latest Blogs</h2>
           <hr />
           <h3>How to learn JavaScript?</h3>
@@ -32,7 +35,7 @@ export default function Home() {
           <h3>How to learn JavaScript?</h3>
           <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corporis mollitia odio explicabo molestiae ipsam facere repudiandae quod, cumque sequi modi.</p>
         </main>
-      </div >
+      </div>
     </>
   )
 }

@@ -1,18 +1,23 @@
 import styles from '../../styles/BlogPost.module.css'
-import Image from 'next/image'
 import React, { useState } from 'react'
+import * as fs from 'fs';
 // step 1: Find the file corresponding to the slug
 
-const slug = (props) => {
+const Slug = (props) => {
     const [blog, setblog] = useState(props.myblog);
+
+    function createMarkup(c) {
+        return { __html: c };
+    }
 
     return (
         <div className={styles.main}>
             <div className={styles.container}>
                 <h1>{blog && blog.title}</h1>
-                <Image src={blog && blog.img} alt={blog && blog.title} width={600} height={300}></Image>
+                <img src={blog && blog.img} alt={blog && blog.title} width={600} height={300} />
                 <div>
-                    {blog && blog.desc}
+                    {blog && <div dangerouslySetInnerHTML={createMarkup(blog.desc)}></div>}
+                    {/* {blog && blog.desc} */}
                     <br />
                     <small>Author - {blog && blog.author}</small>
                 </div>
@@ -21,15 +26,23 @@ const slug = (props) => {
     )
 }
 
-export async function getServerSideProps(context) {
-    console.log(context.req.url)
-
-    const { slug } = context.query;
-    let data = await fetch(`http://localhost:3000/api/getblog?slug=${slug}`)
-    let myblog = await data.json();
+export async function getStaticPaths() {
     return {
-        props: { myblog }, // will be passed to the page component as props
+        paths: [
+            { params: { slug: 'learn-javascript' } },
+            { params: { slug: 'learn-nextjs' } },
+            { params: { slug: 'learn-reactjs' } },
+            { params: { slug: 'learn-typescript' } }
+        ],
+        fallback: true,
     }
 }
 
-export default slug;
+export async function getStaticProps(context) {
+    const { slug } = context.params;
+    let myblog = await fs.promises.readFile(`blogdata/${slug}.json`, 'utf-8');
+    return {
+        props: { myblog: JSON.parse(myblog) },
+    }
+}
+export default Slug; 

@@ -1,0 +1,30 @@
+.contact {
+    width: 100%;
+}
+
+.contactMain {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-control {
+    padding: 4px 7px;
+}
+
+.form {
+    border: 1px solid red;
+}
+
+/* h2 {
+    margin: 20px 0;
+    text-align: center;
+} */
+
+/* div {
+    height: calc(100vh - 560px);
+} */
+
+.map {
+    width: 100%;
+    height: 350px;
+}

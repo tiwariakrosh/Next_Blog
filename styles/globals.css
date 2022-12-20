@@ -21,8 +21,21 @@ ul li {
   list-style: none;
 }
 
+h1,
+h2 {
+  margin-bottom: 1rem;
+}
+
 img {
   max-width: 100%;
+}
+
+button {
+  padding: 7px 20px;
+  border-radius: 2px;
+  border: none;
+  cursor: pointer;
+  margin: 5px;
 }
 
 .main {

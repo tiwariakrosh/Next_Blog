@@ -10,7 +10,6 @@ function Footer() {
                 {`
          footer{
             background: #222;
-
           color: #fff;
           display: grid;
           place-content: center;

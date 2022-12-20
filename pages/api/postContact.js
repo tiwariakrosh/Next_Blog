@@ -9,6 +9,6 @@ export default async function handler(req, res) {
     } else {
         // Handler any change other HTTP method
         res.status(200).json(["allBlogs"])
-        // name, email, desc, message, phone, and address
+        // name, email, phone, message;
     }
 }

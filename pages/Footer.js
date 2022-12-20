@@ -9,7 +9,7 @@ function Footer() {
             <style jsx global>
                 {`
          footer{
-            background: #222;
+            background: var(--dark-green);
           color: #fff;
           display: grid;
           place-content: center;
@@ -22,6 +22,9 @@ function Footer() {
             box-shadow: 4px 5px 15px #3333;
             margin-top: 20px;
             padding: 
+          }
+          footer p{
+            color: #fff;
           }
           `
                 }

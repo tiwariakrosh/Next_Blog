@@ -1,5 +1,8 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
+import Image from 'next/image'
+import Link from 'next/link'
+// import Blog from './Blog'
 
 export default function Home() {
   console.log(styles)
@@ -11,8 +14,8 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className={styles.container} >
-        <main className={styles.main}>
+      <div className={styles}>
+        <main className={styles}>
           <div className={styles.heroSection}>
             <div className={styles.heroText}>
               <h1 className={styles.title}>
@@ -22,20 +25,33 @@ export default function Home() {
                 A Blog for hunting coder by hunting corder
               </p>
             </div>
+            <div className={styles.heroImg}>
+              <Image src="/assets/hd_bg.jpg" alt="Hunting Coder" width={400} height={100} />
+            </div>
           </div>
-          <hr />
           {/* <Image src="/assets/hd_bg.jpg" alt="" width={400} height={220} /> */}
-          <img src="/assets/hd_bg.jpg" alt="Hunting Coder" width={400} height={220} />
-          <h2>Latest Blogs</h2>
-          <hr />
-          <h3>How to learn JavaScript?</h3>
-          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corporis mollitia odio explicabo molestiae ipsam facere repudiandae quod, cumque sequi modi.</p>
-          <h3>How to learn JavaScript?</h3>
-          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corporis mollitia odio explicabo molestiae ipsam facere repudiandae quod, cumque sequi modi.</p>
-          <h3>How to learn JavaScript?</h3>
-          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corporis mollitia odio explicabo molestiae ipsam facere repudiandae quod, cumque sequi modi.</p>
-        </main>
-      </div>
+          <div className={styles.container}>
+            <h2>Latest Blogs</h2>
+            <div className={styles.cardContainer}>
+              <div className={styles.card}>
+                <h3>How to learn JavaScript?</h3>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corporis mollitia odio explicabo molestiae ipsam facere repudiandae quod, cumque sequi modi.</p>
+                <Link className={styles.btn} href="./Blog">Read More</Link>
+              </div>
+              <div className={styles.card}>
+                <h3>Easy way to learn ReactJS</h3>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corporis mollitia odio explicabo molestiae ipsam facere repudiandae quod, cumque sequi modi.</p>
+                <Link className={styles.btn} href="./Blog">Read More</Link>
+              </div>
+              <div className={styles.card}>
+                <h3>How to learn NextJs?</h3>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corporis mollitia odio explicabo molestiae ipsam facere repudiandae quod, cumque sequi modi.</p>
+                <Link className={styles.btn} href="./Blog">Read More</Link>
+              </div>
+            </div>
+          </div>
+        </main >
+      </div >
     </>
   )
 }

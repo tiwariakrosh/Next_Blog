@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import styles from '../styles/Blog.module.css'
 import Link from 'next/link'
 import * as fs from 'fs';
+import InfiniteScroll from 'react-infinite-scroll-component';
 // setrp1: Colect all the files from blogdata director
 // step 2: Iterate through the and Display them
 
